@@ -1,18 +1,21 @@
-# Úkol 1 -- robodungeon
+# Úkol 1 -- Robodungeon
 
 Simulujme jeskyni obdélníkového půdorysu, která je popsatelná mapou vyrobenou ze čtverečkových políček. Na políčkách se jednotlivě vyskytují následující objekty:
 
 - prázné místo
 - stěna
 - rychlý robot, natočený jedním ze 4 možných směrů
-- pomalý robot, taky natočený jedním ze 4 směrů, navíc s jedním bitem paměti (viz. níže).
+- pomalý robot, taky natočený jedním ze 4 směrů
 
 "Okolí" jeskyně (tj. věci mimo mapu) je pro pořádek vyplněné stěnou.
 
 Čas v jeskyni ubíhá diskrétně po "tikách". Při každém tiku roboti provedou přesně jednu akci, která je následující:
 
 - Rychlý robot jede o 1 políčko dopředu, pokud tam je prázdné místo. Pokud tam není prázdné místo, otočí se o 90 stupňů doleva.
-- Pomalý robot se chová podle strategie "levá stěna", tj. snaží se jet podél zdi (pravděpodobně cyklicky). To provede následovně: Pokud je před ním stěna, otočí se doprava. Pokud před ním není stěna a vlevo od něj stěna je, jede rovně. Pokud vlevo od něj stěna chybí, otočí se doleva a zapamatuje si (do jednoho bitu paměti), že příští kolo musí jet rovně (pokud nenastanou zvláštní okolnosti, např. když na volné místo v dalším tahu vjede jiný robot).
+- Pomalý robot se chová podle strategie "levá stěna", tj. snaží se jet podél zdi (pravděpodobně cyklicky). To provede následovně:
+  - Pokud je vlevo od něj místo, v jednom tiku se otočí doleva a najede na volné místo.
+  - V opačném případě zkoumá co je před ním, když tam je místo, jede dopředu
+  - Pokud před ním místo taky není, otočí se doprava.
 - V případě kolize má přednost robot, který jede víc "shora" a "zleva".
 
 ( Chování robotů je inspirované poměrně starou hrou [Down-to-Earth](https://worldofspectrum.org/infoseekid.cgi?id=0001470) ([video](https://www.youtube.com/watch?v=Uzf4gtaiOcs)). )

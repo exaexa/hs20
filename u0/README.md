@@ -19,7 +19,7 @@ Protože je to první úkol, přidávám seznam funkcí ze standardní knihovny,
 
 Haskellový ekosystém standardizoval poměrně užitečné balíčky managované programem `cabal`. Ten se používá následovně:
 
-##### 1. Inicializace
+#### 1. Inicializace
 
 Vyrobte si adresář na projekt, a v něm spusťte:
 ```
@@ -34,7 +34,7 @@ Všechny informace o projektu jsou zapsané v souboru `jmenoprojektu.cabal`. Int
 Add informative comments to each field in the cabal file (y/n)? [default: n] y
 ```
 
-##### 2. Programování
+#### 2. Programování
 
 Pokud se všechno povedlo, meli byste mít k dispozici defaultní "poloprázdný" soubor `Main.hs`. Ten můžete normálně editovat. Projekt můžete kdykoliv nechat sestavit a spustit pomocí `cabal run`. (Defaultní `Main.hs` většinou výpíše něco jako `Hello Haskell!`).
 
@@ -45,7 +45,7 @@ Další příkazy:
 
 Do `Main.hs` teď můžete vyplnit řešení a otestovat funkčnost.
 
-##### 3. Odevzdávání
+#### 3. Odevzdávání
 
 Hotový projekt můžete nechat automaticky zabalit do odevzdatelné podoby jednoduše pomocí:
 ```
@@ -53,7 +53,7 @@ cabal sdist
 ```
 To by mělo vyrobit archiv `u0-prijmeni-verze.tar.gz`, ten nahrajte do SISu do odpovídající kolonky ve studijních mezivýsledcích.
 
-**Demonstrační balík je k dispozici [tady](u0-kratochvil-0.1.0.0.tar.gz) a rozbalený [tady](u0-kratochvil-0.1.0.0/).** (Program ale řeší trochu jednodušší úkol.)
+**Demonstrační balík je k dispozici [tady](u0-kratochvil-0.1.0.0.tar.gz) a rozbalený [tady](u0-kratochvil-0.1.0.0/).** (Demonstrační program ale řeší trochu jednodušší úkol než DÚ0.)
 
 Kromě toho je vhodné si program předem nechat trochu zkontrolovat automatickými prostředky. Například je vhodné si zapnout všechna kompilační varování tím že do souboru `.cabal` do sekce s `executable` přidáte kompilační flagy:
 ```

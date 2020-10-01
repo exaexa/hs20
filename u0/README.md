@@ -13,7 +13,7 @@ Protože je to první úkol, přidávám seznam funkcí ze standardní knihovny,
 - [`isAlpha`](https://hackage.haskell.org/package/base/docs/Data-Char.html#v:isAlpha) z knihovny `Data.Char` (funguje prakticky stejně jako Cčkové `isalpha` z `<ctype.h>`)
 - [`getContent`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:getContents) na načtení celého vstupu (je to IO akce která vyprodukuje `String`), případně [`interact`](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:interact)
 - [`putStrLn`](https://hackage.haskell.org/package/base/docs/Prelude.html#v:putStrLn), [`show`](https://hackage.haskell.org/package/base/docs/Prelude.html#v:show) nebo [`print`](https://hackage.haskell.org/package/base/docs/Prelude.html#v:print) pro vypsání a/nebo naformátování výstupu
-- `fromIntegral` pro zkonvertování integerovitého typu na cokoliv, hodí se např. pokud chcete počítat pomocí floatů; na zpětnou konverzi se může hodit nějaká funkce [odsud](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:truncate).
+- [`fromIntegral`](https://hackage.haskell.org/package/base/docs/Prelude.html#v:fromIntegral) pro zkonvertování integerovitého typu na cokoliv, hodí se např. pokud chcete počítat pomocí floatů. Na zpětnou konverzi se může hodit nějaká funkce [odsud](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:truncate).
 
 ### Jak vyrobit "projekt"?
 

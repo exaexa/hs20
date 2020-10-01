@@ -1,9 +1,20 @@
 
-# Úkol 0 -- statistika ASCII písmen
+# Úkol 0: statistika ASCII písmen
 
 Program přečte celý standardní vstup (`stdin`) a vypíše kolik procent písmen jsou samohlásky (`aeiouy`).
 
 Pokud se nechcete zabývat tím jak v Haskellu fungují floatová čísla, procenta můžete seříznout na celá čísla. Počítejte jen s ASCII znaky, můžete předpokládat, že unikód na vstupu nebude, a zároveň že vstup nebude nijak obrovský.
+
+Příklad vstupu:
+```
+aaasssddd
+    ---neconeco...
+```
+
+Odpovídající výstup:
+```
+41%
+```
 
 ## Návod
 

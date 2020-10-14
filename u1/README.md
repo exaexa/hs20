@@ -48,7 +48,7 @@ Kvůli možným kolizím robotů je bohužel update poněkud těžké naprogramo
 - V prvním kroku updatu roboty ještě nepřesouvejte, ale updaty uložte do mapy jako rezervace. Do rezervace si můžete uložit i jak robot bude vypadat po ukončení kroku (tj. jaký typ robota to bude, a jak má být otočený). Pro ostatní roboty se rezervovaná políčka chovají jako "obsazená". Pokud se robot rozhodne stát na místě (a jen se otočit), přepište ho rezervací, ve které je uložen jeho stav po otočení.
 - V druhém kroku updatu všechny políčka s rezervacemi přepište na odpovídající roboty, a roboty kteří zbyli z prvního kroku nahraďte prázdným políčkem.
 
-Vzhledem k tomu, že v prvním kroku musíte reagovat na změny stavu mapy ještě když mapu procházíte, se dost hodí celou věc pojmout jako stavový výpočet, např. jako `updateMap :: State [[MapTile]] ()`. Práci si pak můžete výrazně zjednodušit tím, že si vyrobíte "imperativní" pomůcky jako `getMapTileAt :: Int -> Int -> State [[MapTile]] MapTile` a `setMapTileAt :: Int -> Int -> MapTile -> State [[MapTile] ()`, a algoritmus napíšete stejným stylem jako v imperativních jazycích.
+Vzhledem k tomu, že v prvním kroku musíte reagovat na změny stavu mapy ještě když mapu procházíte, se dost hodí celou věc pojmout jako stavový výpočet, např. jako `updateMap :: State [[MapTile]] ()`. Práci si pak můžete výrazně zjednodušit tím, že si vyrobíte "imperativní" pomůcky jako `getMapTileAt :: Int -> Int -> State [[MapTile]] MapTile` a `setMapTileAt :: Int -> Int -> MapTile -> State [[MapTile]] ()`, a algoritmus napíšete stejným stylem jako v imperativních jazycích.
 
 ## Bonusy
 

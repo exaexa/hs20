@@ -1,6 +1,8 @@
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE FlexibleInstances #-}
 
+{- Verze pro megaparsec 8.0 a nižší! -}
+
 import Control.Monad (void)
 import Data.List (intercalate)
 import Data.List.NonEmpty (NonEmpty(..))

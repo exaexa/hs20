@@ -3,9 +3,25 @@
 
 ## Mírný úvod a předběžnosti
 
-Na přednášce jsme řešili monadické parsování a parsery, podobné můžete najít v balících [`parsec`](), [`megaparsec`]() a [`attoparsec`](). Po rámcovém úvodu dostupném ve slajdech a v příkladech kódu na webu si můžete projít i nějaké (přesnější) tutorialy a ukázkový kód; nějaké jsou třeba [tady](https://markkarpov.com/learn-haskell.html#megaparsec-tutorials), konkrétně [tenhle](https://markkarpov.com/megaparsec/parsing-simple-imperative-language.html) je zadání dnešního úkolu dost blízko. Detaily se dají sehnat z [dokumentace Megaparsecu](https://hackage.haskell.org/package/megaparsec).
+Na přednášce jsme řešili monadické parsování a parsery, podobné můžete najít v
+balících [`parsec`](https://hackage.haskell.org/package/parsec),
+[`megaparsec`](https://hackage.haskell.org/package/megaparsec) a
+[`attoparsec`](https://hackage.haskell.org/package/attoparsec). Po rámcovém
+úvodu dostupném ve slajdech a příkladech kódu na webu si můžete projít i nějaké
+(přesnější) tutorialy a ukázkový kód, nějaké jsou třeba
+[tady](https://markkarpov.com/learn-haskell.html#megaparsec-tutorials), a
+konkrétně
+[tenhle](https://markkarpov.com/megaparsec/parsing-simple-imperative-language.html)
+je zadání úkolu 2 celkem blízko. Detaily se dají sehnat z [dokumentace
+Megaparsecu](https://hackage.haskell.org/package/megaparsec).
 
-V úkolu navíc budeme řešit zpracování a formátování textu, s tím souvisí pretty-printing. O tom na přednášce budeme teprve mluvit (odhadem na šesté až sedmé), zatím se může hodit poměrně jednoduchá knihovna na pretty-printing prakticky čehokoliv, [dostupná zde](https://hackage.haskell.org/package/pretty). Místo dokumentace vám možná může stačit jednoduchý [příklad zde](ppscheme.hs), který pěkně vypisuje a zarovnává Scheme.
+V úkolu navíc budeme řešit zpracování a formátování textu, s tím souvisí
+pretty-printing. O tom na přednášce budeme teprve mluvit (odhadem na šesté až
+sedmé), zatím se může hodit poměrně jednoduchá knihovna na pretty-printing
+prakticky čehokoliv, [dostupná
+zde](https://hackage.haskell.org/package/pretty). Místo dokumentace vám možná
+může stačit jednoduchý [příklad zde](ppscheme.hs), který pěkně vypisuje a
+zarovnává Scheme.
 
 ## Vstup domácího úkolu
 
@@ -18,9 +34,9 @@ Blindworm) dovoluje následující konstrukce:
   pomocí binárních operátorů `+`, `-`, `*`, `/`, `<`, `>` a závorek `(` a `)`.
 - volání funkcí, které jsou zapsané "Cčkově" pomocí závorek a čárek, např.
   `asd(1,2,345)`
-- příkazů (každý příkaz obsahuje jeden výraz na samostatném řádku)
+- příkazy (každý příkaz obsahuje jeden výraz na samostatném řádku)
 - přiřazení (jméno proměnné následované `=` a výrazem, taky na samostatném řádku)
-- výrazy `if`, `if`+`else` a `while`, podobně jako v konkurenčním hadovitém jazyce (s dvojtečkami)
+- výrazy `if`, `if`+`else` a `while`, podobně jako v konkurenčním hadím jazyce (s dvojtečkami)
 - definice funkcí pomocí klíčového slova `def`, taky jako v pythonu, ale jen s
   obyčejnými argumenty (tj. bez keywordových argumentů nebo defaultních hodnot)
 
@@ -28,14 +44,15 @@ Blindworm) dovoluje následující konstrukce:
 
 Použijte buď `parsec` nebo `megaparsec` na zkonvertování Slepýšského kódu na
 nějakou dočasnou reprezentaci (asi AST), ten následně vypište mírně upravený
-pomocí knihovny `pretty` (nebo ručně, pokud se vám do toho chce).
+pomocí knihovny [`pretty`](https://hackage.haskell.org/package/pretty)
+(nebo i ručně, pokud se vám do toho chce).
 
 Vstupní (ošklivý slepýšový) kód přečtěte ze souboru specifikovaném v jediném
 argumentu z příkazové řádky, výstupní (hezčí) kód vypište na standardní výstup.
 
 Hezčí kód by měl vypadat následovně:
 
-- Syntax příkazů `if`, `while`, bloků kódu a definic funkcí je zkonvertovaná na
+- Syntax příkazů `if`, `while`, bloků kódu a definic funkcí zkonvertujte na
   Cčkovou, tj. kolem podmínek přidejte závorky, a kolem bloků kódu explicitné
   složené závorky `{` a `}`. Mezi příkazy přidejte středníky, pro definice
   funkcí zachovejte klíčové slovo `def`. Výsledný kód by neměl být závislý na
@@ -128,11 +145,11 @@ Undeclared identifier 'c'
      'print(a(c))'
 ```
 
-Hint: na průchod AST s nějakým "kontextem" se dost hodí použít nějakou
+**Hint:** na průchod AST s nějakým "kontextem" se dost hodí použít nějakou
 kombinaci Readeru, Writeru nebo State monády, abyste se o kontext starat
-ideálně nemuseli.
+ideálně nemuseli (více viz níže).
 
-Zjednodušení: Slepýš neumí rekurzi, takže rekurzivní funkce a/nebo funkce,
+**Zjednodušení:** Slepýš neumí rekurzi, takže rekurzivní funkce a/nebo funkce,
 které referují na funkce a proměnné definované až dále v kódu, můžete považovat
 za chybné. Např.:
 ```
@@ -143,7 +160,7 @@ a()
 ```
 ...si může stěžovat na nedefinované `a` v definici funkce `a`.
 
-##### Nedůležitá poznámka o nechybějící rekurzi
+#### Nedůležitá poznámka o nechybějící rekurzi
 
 Slepýš sice rekurzi neumí, ale to nám nebrání, abychom ji dodefinovali ručně
 pomocí fixed-point operátoru!
@@ -206,7 +223,7 @@ if a: b
 budete parsovat jako:
 
 ```
-if a: {
+if(a) {
   b;
 };
 
@@ -225,7 +242,7 @@ toho si typ většinou definujete ručně z typů chyb a proudu, který chcete
 parsovat:
 
 ```hs
-type Parser = Parsec Void String
+type Parser a = Parsec Void String a
 ```
 
 ...říká, že chybové reporty parser umět nebude (`Void`), a že vstupem parseru
@@ -247,8 +264,9 @@ odsud](https://hackage.haskell.org/package/megaparsec-7.0.5/docs/Text-Megaparsec
 Abyste vlastní proud mohli použít v Megaparsecu, je pro něj potřeba vyrobit
 instanci odpovídající typové třídy, tu najdete v kostře řešení.
 
-Dvojúrovňové parsování ale není nijak povinné. (Udělat to rozumně a
-rozšiřitelně jinak je ale dost složité na to, abych to považoval za bonus.)
+**Poznámka:** Dvojúrovňové parsování není povinné, jestli máte jiný nápad,
+udělejte to jinak. Udělat to rozumně a _rozšiřitelně_ jiným způsobem je ale
+dost složité na to, aby za to byly bonusové body. :)
 
 ### Reader a Writer
 
@@ -280,8 +298,8 @@ vypíše `[2,2,2,2]`.
 
 `Writer` funguje přesně obráceně -- ukládá pologrupový "stav" určený pouze pro
 zápis. Podpůrné funkce jsou podobné jako u readeru, ty důležité se jmenují
-`runWriter` and `tell`. Writer se dost hodí pro "logování" chybových hlášek, na
-které můžete narazit v první části úkolu.
+`runWriter` and `tell`. Writer se dost hodí pro "logování" chybových hlášek,
+které asi budete chtít generovat v druhé části úkolu.
 
 ```hs
 w = do tell ["ahoj"]
@@ -309,14 +327,15 @@ protože místo víceparametrových typových tříd používají asociované ty
 můžete, používejte `transformers`.
 
 
-# Submission
+# Odevzdávání
 
 Z programu vyrobte cabalový balík pojmenovaný `u2-vaseprijmeni` (úplně stejně
 jako v předchozích úkolech), zabalte ho pomocí `cabal sdist` a nahrajte na
-správné místo do SISu. Balík by měl sestavit jediný program pojmenovaný
+správné místo do SISu. Balík by měl sestavovat jediný program pojmenovaný
 `slepys-format`.
 
 Před odevzdáním zkontrolujte, že archiv je kompletní a funguje (hlavně pokud
-zdrojový kód rozdělíte na víc souborů), a že jde spustit pomocí `cabal run`.
+zdrojový kód rozdělíte na víc souborů), a že jde skompilovat a spustit pomocí
+`cabal run`.
 
 Tradičně doporučuju konzultovat `hlint` a kód si nechat automaticky zformátovat.

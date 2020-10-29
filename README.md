@@ -6,3 +6,4 @@
   nainstalované GHC funguje podle očekávání. V SISu dostanete zpětnou vazbu o
   tom jestli je forma odevzdání v pořádku.
 - [Úkol 1](u1/) -- Robodungeon aka. čtverečková mapa aka. Down-To-Earth. Editovatelná simulace jeskyně s roboty.
+- [Úkol 2](u2/) -- Odhadění hadího jazyka. Monády, parsování a prettyprinting.

@@ -220,5 +220,5 @@ the state was: 123
 
 ## Odevzdávání
 
-Program sbalíkujte tradičně cabalem do balíku `vasePrijmeni3`, a archiv s
+Program sbalíkujte tradičně cabalem do balíku `u3-Prijmeni`, a archiv s
 balíkem nahrajte do odpovídajícího políčka v SISu.

@@ -7,4 +7,4 @@
   tom jestli je forma odevzdání v pořádku.
 - [Úkol 1](u1/) -- Robodungeon aka. čtverečková mapa aka. Down-To-Earth. Editovatelná simulace jeskyně s roboty.
 - [Úkol 2](u2/) -- Odhadění hadího jazyka. Monády, parsování a prettyprinting.
-- [Úkol 3](u2/) -- Multiplayer nad čtverečkovou mapou ("Game Of Life Deathmatch"?)
+- [Úkol 3](u3/) -- Multiplayer nad čtverečkovou mapou ("Game Of Life Deathmatch"?)

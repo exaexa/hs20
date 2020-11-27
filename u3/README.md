@@ -91,7 +91,7 @@ vypíše jediný přijatý řádek. (Program se odpojuje celkem hrubě zavření
 socketu, ne příkazem `quit`. Server proto bude pravděpodobně vypisovat
 odpovídající stížnosti o neočekávaném odpojení klienta.)
 
-## Úkol 1
+## Část první
 
 Vezměte si implementaci hrací plochy z robodungeonu (úkolu 1), zjednodušte ji
 na Game of Life (tj. políčka můžete reprezentovat poměrně triviálně binární
@@ -146,14 +146,14 @@ Doporučený postup implementace je následující:
 Navíc si vyberte jeden ze dvou následujících volitelných úkolů (můžete
 samozřejmě zvládnout i oba dva).
 
-## Úkol 2 (varianta A)
+## Část druhá (varianta A)
 
 Na naparsování parametrů z příkazové řádky použijte knihovnu
 `optparse-applicative`. Pro oba parametry implementujte i "dlouhou" verzi
 (např. `--address`), a v případě chybně zadaných parametrů (nebo když si
 uživatel řekne o `--help`) vypište nápovědu.
 
-## Úkol 2 (varianta B)
+## Část druhá (varianta B)
 
 Modifikace lokálního naprogramujte velmi hezky a supermoderně, pomocí monády
 `State` a optiky (tj. `Control.Lens` nebo `Lens.Micro.*`). Konkrétně zkuste

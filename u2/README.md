@@ -166,19 +166,20 @@ Slepýš sice rekurzi neumí, ale to nám nebrání, abychom ji dodefinovali ru�
 pomocí fixed-point operátoru!
 
 ```
-def faktorial(faktorial_rec):
+def faktorial_r(rekurze):
   def f(a):
     if a>1:
-      a*faktorial_rec(a-1)
+      a*rekurze(a-1)
     else:
       1
   f
 
 def fix(f):
-  def f_omega(x): f(x(x))
-  f_omega(f_omega)
-
-print(fix(faktorial)(5))
+  def fω(x): f(x(x))
+  fω(fω)
+  
+faktorial = fix(faktorial_r)
+print(faktorial(5))
 ```
 
 # Obecné rady

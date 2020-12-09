@@ -174,7 +174,7 @@ Svůj zdrojový kód okomentujte pomocí haddockových docstringů (začínají 
 tj. např. `--| ... ` nebo `{-| ...` se vysází do dokumentace, podobně jako
 `/** ...` při používání Doxygenu). Zařiďte aby dokumentace byla sestavitelná pomocí
 `cabal haddock`. Zároveň nechte pěkně vysázet zdrojový kód jako HTML (přidejte
-parametr `--hyperlink-source`).
+parametr `--haddock-hyperlink-source`).
 
 ## Hinty
 

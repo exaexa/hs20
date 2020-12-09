@@ -168,6 +168,14 @@ handleCursorRight = runState $ do
 (Kód zvětší hodnotu v cursorX o 1, a výsledek zarovná na 19. Podobně jde napsat
 např. `cursorX . filtered (<19) += 1`.)
 
+## Bonus
+
+Svůj zdrojový kód okomentujte pomocí haddockových docstringů (začínají svislítkem,
+tj. např. `--| ... ` nebo `{-| ...` se vysází do dokumentace, podobně jako
+`/** ...` při používání Doxygenu). Zařiďte aby dokumentace byla sestavitelná pomocí
+`cabal haddock`. Zároveň nechte pěkně vysázet zdrojový kód jako HTML (přidejte
+parametr `--hyperlink-source`).
+
 ## Hinty
 
 - Vaše aplikace _jen zobrazuje stav serveru_; logiku Game Of Life implementovat
